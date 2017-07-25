@@ -12,6 +12,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RoverFormComponent } from './rover-form/rover-form.component';
 import { PhotosListComponent } from './photos-list/photos-list.component';
 import { UserPhotosListComponent } from './user-photos-list/user-photos-list.component';
+import { PublicComponent } from './public/public.component';
+import { PrivateComponent } from './private/private.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -25,7 +27,9 @@ export const firebaseConfig = {
     AppComponent,
     RoverFormComponent,
     PhotosListComponent,
-    UserPhotosListComponent
+    UserPhotosListComponent,
+    PublicComponent,
+    PrivateComponent
   ],
   imports: [
     BrowserModule,
