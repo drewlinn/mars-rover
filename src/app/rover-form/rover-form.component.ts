@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { MarsRoverAPIPhotos } from '../mars-rover-api-photos.service';
+import { PhotoService } from '../photo.service';
 
 @Component({
   selector: 'app-rover-form',
   templateUrl: './rover-form.component.html',
   styleUrls: [ './rover-form.component.css' ],
-  providers: [ MarsRoverAPIPhotos ]
+  providers: [ MarsRoverAPIPhotos, PhotoService ]
 })
 
 export class RoverFormComponent {
@@ -25,5 +26,10 @@ export class RoverFormComponent {
         this.noPhotos = true;
       }
     });
+  }
+
+  saveRoverImages(date, camera){
+    this.marsRoverPhotos.saveImages(date, camera);
+    alert("The images from " + date + "taken by the " + camera + " camera have been saved to the database.")
   }
 }
