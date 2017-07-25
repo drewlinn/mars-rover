@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
 import { RoverFormComponent } from './rover-form/rover-form.component';
 import { PhotosListComponent } from './photos-list/photos-list.component';
 import { UserPhotosListComponent } from './user-photos-list/user-photos-list.component';
@@ -31,7 +33,8 @@ export const firebaseConfig = {
     HttpModule,
     routing,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
